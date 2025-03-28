@@ -8,31 +8,25 @@ import main.java.intuitive.care.zipping.ZippingPDF;
 
 public class Executavel {
     public static void main(String[] args) {
-        Scraping scraping = new Scraping();
-        DownloadPDF downloadPDF = new DownloadPDF();
-        ZippingPDF zippingPDF = new ZippingPDF();
-
-
-        String pathDownload = downloadPDF.getDownloadDirectory();
+      
+        String pathDownload = DownloadPDF.getDownloadDirectory();
         System.out.println("Path Download"+pathDownload);
 
         // acessar diretamente as urls
-        List<String> urlsPDF = scraping.dataScraping();
+        List<String> urlsPDF = Scraping.dataScraping();
         int iterator = 0;
         for(String url: urlsPDF){
             iterator++;
             System.out.println(url);
-            downloadPDF.downloadAnexos(url, "Anexo "+iterator+".pdf");
+            DownloadPDF.downloadAnexos(url, "Anexo "+iterator+".pdf");
         }
         waitActions(5000);
         
-        zippingPDF.zippingAnexos(pathDownload);
+        ZippingPDF.zippingAnexos(pathDownload);
         
         waitActions(5000);
         System.out.println("OK! ");
     }
-
-
 
     private static void waitActions(long timer){
         try {
