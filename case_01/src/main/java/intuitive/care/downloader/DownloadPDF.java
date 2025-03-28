@@ -12,7 +12,7 @@ public class DownloadPDF {
 
     public DownloadPDF(){}
     
-    private static String downloadDirectory = "case_01\\src\\main\\java\\intuitive\\care\\pdfs"; 
+    private static String downloadDirectory = System.getProperty("user.dir") + File.separator + "case_01" + File.separator + "src" + File.separator + "main" + File.separator + "java" + File.separator + "intuitive" + File.separator + "care" + File.separator + "pdfs";
     
     public static void downloadAnexos(String urlPDF, String filename){
         ifNoExists(downloadDirectory);

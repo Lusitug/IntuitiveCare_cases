@@ -12,11 +12,11 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 
 public class Scraping {
+
     public Scraping(){}
 
     public static List<String> dataScraping() {
-        // TODO Auto-generated method stub
-        System.setProperty("webdriver.edge.driver", "case_01\\src\\main\\resources\\msedgedriver.exe");
+        System.setProperty("webdriver.edge.driver", System.getProperty("user.dir") + File.separator + "case_01" + File.separator + "src" + File.separator + "main" + File.separator + "resources" + File.separator + "msedgedriver.exe");
         EdgeOptions options = new EdgeOptions(); 
         // opção referente ao uso da memoria compartilhada pelo navegador
 

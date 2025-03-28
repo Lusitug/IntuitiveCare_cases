@@ -7,11 +7,10 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 public class ZippingPDF {
+    
     public ZippingPDF(){}
     
-    private static String zipFilePath = "case_01\\src\\main\\java\\intuitive\\care\\anexos-atualizacao-do-rol-de-procedimentos.zip";
-
-
+    private static String zipFilePath = System.getProperty("user.dir") + File.separator + "case_01"  + File.separator + "anexos-atualizacao-do-rol-de-procedimentos.zip";
 
     public static void zippingAnexos(String downloadDir){
         try {
